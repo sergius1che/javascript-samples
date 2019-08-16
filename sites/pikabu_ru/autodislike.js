@@ -4,14 +4,14 @@ var dislikeTags = [
 	['Хаски', 'Собака'],
 	['Дворняга', 'Собака'],
 	['Кот', 'Собака', 'Видео']
-]
+]; 
 
 function GetEvent(type){
 	let ev = document.createEvent('HTMLEvents');
 	ev.initEvent(type, true, true);
 	ev.eventName = type;
 	return ev;
-}
+}; 
 
 function TagsInclude(tags){
 	let i = dislikeTags.length;
@@ -22,7 +22,7 @@ function TagsInclude(tags){
 	}
 	
 	return res;
-}
+}; 
 
 function DislikeRunner(){
 	let articles = document.querySelectorAll('article.story');
@@ -34,6 +34,6 @@ function DislikeRunner(){
 			articles[a].querySelector('div.story__rating-down').dispatchEvent(GetEvent('click'));
 		}
 	}
-}
+};
 
 console.log(setInterval(DislikeRunner, 600));
